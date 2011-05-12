@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerListener;
 
 import com.craftmin.bukkit.LockChest;
 import com.craftmin.bukkit.lockDecoder;
-import com.craftmin.bukkit.chest.ChestDefinition;
+import com.craftmin.bukkit.Chest.ChestDefinition;
 
 public class lcPlayerListener extends PlayerListener {
 

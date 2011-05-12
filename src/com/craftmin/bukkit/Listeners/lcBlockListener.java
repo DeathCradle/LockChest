@@ -5,8 +5,8 @@ import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.event.block.BlockListener;
 
 import com.craftmin.bukkit.LockChest;
-import com.craftmin.bukkit.chest.Chest;
-import com.craftmin.bukkit.chest.ChestDefinition;
+import com.craftmin.bukkit.Chest.Chest;
+import com.craftmin.bukkit.Chest.ChestDefinition;
 
 public class lcBlockListener extends BlockListener {
 

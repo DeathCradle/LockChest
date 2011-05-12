@@ -71,11 +71,13 @@ public class LockChest extends JavaPlugin {
 		mySettings = new Settings();
 		mySettings.setAllowOps(configuration.getBoolean("allowops", true));
 		mySettings.setAllowPicking(configuration.getBoolean("allowpicking", true));
+		
 		mySettings.setWoodenHoe(configuration.getInt("woodenhoe", 290));
 		mySettings.setStoneHoe(configuration.getInt("stonehoe", 291));
 		mySettings.setIronHoe(configuration.getInt("ironhoe", 292));
 		mySettings.setGoldHoe(configuration.getInt("goldhoe", 294));
 		mySettings.setDiamondHoe(configuration.getInt("diamondhoe", 293));
+		
 		mySettings.setBaseRate(configuration.getInt("baserate", 40));
 		mySettings.setWoodenRate(configuration.getInt("woodenrate", 1));
 		mySettings.setStoneRate(configuration.getInt("stonerate", 5));
@@ -121,8 +123,5 @@ public class LockChest extends JavaPlugin {
 		if(force) {
 			log.info("[LockChest] " + msg);
 		}
-	}
-	
-	
-	
+	}	
 }

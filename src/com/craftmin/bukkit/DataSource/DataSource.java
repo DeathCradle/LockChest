@@ -8,8 +8,8 @@ import org.bukkit.World;
 import org.bukkit.util.config.Configuration;
 
 import com.craftmin.bukkit.LockChest;
-import com.craftmin.bukkit.chest.Chest;
-import com.craftmin.bukkit.chest.lcChestArgs;
+import com.craftmin.bukkit.Chest.Chest;
+import com.craftmin.bukkit.Chest.lcChestArgs;
 
 public class DataSource {
 

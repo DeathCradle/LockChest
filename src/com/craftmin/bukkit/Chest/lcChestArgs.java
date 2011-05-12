@@ -1,4 +1,4 @@
-package com.craftmin.bukkit.chest;
+package com.craftmin.bukkit.Chest;
 
 import java.util.ArrayList;
 import java.util.List;

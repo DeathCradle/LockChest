@@ -1,4 +1,4 @@
-package com.craftmin.bukkit.chest;
+package com.craftmin.bukkit.Chest;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

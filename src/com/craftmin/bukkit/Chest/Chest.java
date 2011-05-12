@@ -1,4 +1,4 @@
-package com.craftmin.bukkit.chest;
+package com.craftmin.bukkit.Chest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,42 +111,6 @@ public class Chest {
 		return false;
 	}
 	
-	/*public boolean isDoubleChest(World world) {
-		if(this.getLocation() != null) {
-			if(world.getBlockTypeIdAt(getLocation()) == 54) {
-				//Get 1 block infront
-				Location bLocNorth = this.getLocation();
-				bLocNorth.setX(bLocNorth.getX() - 1);
-				
-				//Get 1 Block behind
-				Location bLocSouth = this.getLocation();
-				bLocSouth.setX(bLocSouth.getX() + 1);
-				
-				//Get 1 block beside -> right
-				Location bLocEast = this.getLocation();
-				bLocEast.setZ(bLocEast.getZ() - 1);
-				
-				//Get 1 Block besidew <- left
-				Location bLocWest = this.getLocation();
-				bLocWest.setZ(bLocWest.getZ() + 1);
-				
-				boolean isDouble = false;
-				if(world.getBlockTypeIdAt(bLocNorth) == 54) {
-					isDouble = true;
-				} else if(world.getBlockTypeIdAt(bLocSouth) == 54) {
-					isDouble = true;
-				} else if(world.getBlockTypeIdAt(bLocEast) == 54) {
-					isDouble = true;
-				} else if(world.getBlockTypeIdAt(bLocWest) == 54) {
-					isDouble = true;
-				}
-				
-				return isDouble;
-			} //else wtf bro
-		}		
-		return false;
-	}*/
-	
 	public Location isDoubleChest(World world) {
 		if(this.getLocation() != null) {
 			Block chest = world.getBlockAt(getLocation());
@@ -164,40 +128,6 @@ public class Chest {
 		}
 		return null;
 	}
-	
-	/*public Location isDoubleChest(World world) {
-				//Get 1 block infront
-				Location bLocNorth = this.getLocation();
-				bLocNorth.setX(bLocNorth.getX() - 1);
-				
-				//Get 1 Block behind
-				Location bLocSouth = this.getLocation();
-				bLocSouth.setX(bLocSouth.getX() + 1);
-				
-				//Get 1 block beside -> right
-				Location bLocEast = this.getLocation();
-				bLocEast.setZ(bLocEast.getZ() - 1);
-				
-				//Get 1 Block besidew <- left
-				Location bLocWest = this.getLocation();
-				bLocWest.setZ(bLocWest.getZ() + 1);
-				
-				Location chest = null;
-				if(world.getBlockTypeIdAt(bLocNorth) == 54) {
-					chest = bLocNorth;
-				} else if(world.getBlockTypeIdAt(bLocSouth) == 54) {
-					chest = bLocSouth;
-				} else if(world.getBlockTypeIdAt(bLocEast) == 54) {
-					chest = bLocEast;
-				} else if(world.getBlockTypeIdAt(bLocWest) == 54) {
-					chest = bLocWest;
-				}
-				
-				return chest;
-			} //else wtf bro, Don't call me if I aint initialized!
-		}		
-		return null;
-	}*/
 	
 	public boolean isDouble(World world) {
 		if(isDoubleChest(world) != null) {
