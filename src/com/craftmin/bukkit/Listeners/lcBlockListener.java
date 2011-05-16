@@ -1,8 +1,10 @@
 package com.craftmin.bukkit.Listeners;
 
+import org.bukkit.Location;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockDamageEvent;
 import org.bukkit.event.block.BlockListener;
+import org.bukkit.event.block.BlockPlaceEvent;
 
 import com.craftmin.bukkit.LockChest;
 import com.craftmin.bukkit.Chest.Chest;
@@ -41,6 +43,19 @@ public class lcBlockListener extends BlockListener {
 			return;
 		}
 		event.setCancelled(true);
+	}
+	
+	public void onBlockPlace(BlockPlaceEvent event) {
+		if(event.getBlock().getTypeId() != 54) { return; }
+		if(!plugin.isEnabled) { return; }
+		Chest chest = new Chest();
+		chest.setLocation(event.getBlock().getLocation());
+		Location block = chest.isDoubleChest(event.getPlayer().getWorld());
+		if(block != null) {
+			if(ChestDefinition.isLocked(event.getPlayer().getWorld().getBlockAt(block), event.getPlayer(), plugin)) {
+				event.setCancelled(true);
+			}
+		}
 	}
 	
 }
