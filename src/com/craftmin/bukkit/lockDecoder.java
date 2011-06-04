@@ -10,15 +10,22 @@ import org.bukkit.inventory.ItemStack;
 public class lockDecoder {
 
 	static Random rand = new Random();
-	static int dFail = 0;
+	static int dFail = 0; //People arent always doing this to chests so it seems reasonable 1 for all.
 	
-	public static boolean processChest(Player player, Block block, Settings settings) {
+	public static boolean processChest(Player player, Block block, Settings settings, Permissions permissions) {
 		if(!settings.isAllowPicking()) {
 			return false;
 		}
+		
 		int Chance = lcHoe.getHoeChanceVal(player.getItemInHand(), settings);
 		
 		if(Chance > 0) {
+
+			if(permissions.isCommandRestricted(player, "lockchest.pick")) {
+				player.sendMessage("You cannot pick a chest!");
+				return false;
+			}
+			
 			int cal = settings.getBaseRate() - (Chance);
 			int Success = rand.nextInt(cal);
 			
@@ -48,7 +55,7 @@ public class lockDecoder {
 			if(Chance == 20) { dFail += 1; }
 			player.sendMessage(ChatColor.DARK_RED + "You have failed to unlock the Chest!");
 			
-			return true;
+			//return true; //Why keep this? O.o
 		}		
 		return true;
 	}

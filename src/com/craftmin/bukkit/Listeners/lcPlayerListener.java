@@ -29,8 +29,8 @@ public class lcPlayerListener extends PlayerListener {
 		if(!event.hasBlock()) { return; }
 		if(plugin.mySettings.isUsingPermissions()) {
 			String world = event.getPlayer().getWorld().getName();
-			String grp = plugin.Manager.getHandler().getGroup(world, event.getPlayer().getName());
-			if(!plugin.Manager.getHandler().canGroupBuild(world, grp)) {
+			//String grp = plugin.Manager.getHandler().getGroup(world, event.getPlayer().getName());
+			if(!plugin.Manager.getHandler().getGroupObject(world, event.getPlayer().getName()).canBuild()) {
 				event.setCancelled(true);
 				return;
 			}			
@@ -60,7 +60,7 @@ public class lcPlayerListener extends PlayerListener {
 					event.setCancelled(locked);
 				} else {
 					if(locked) {
-						boolean ret = lockDecoder.processChest(ply, event.getClickedBlock(), plugin.mySettings);
+						boolean ret = lockDecoder.processChest(ply, event.getClickedBlock(), plugin.mySettings, plugin.permissions);
 						event.setCancelled(ret);
 					}
 				}
